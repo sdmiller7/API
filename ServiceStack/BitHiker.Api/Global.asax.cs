@@ -21,8 +21,7 @@ namespace BitHiker.Api
 
         protected void Application_BeginRequest(object src, EventArgs e)
         {
-            if (Request.IsLocal)
-                ServiceStack.MiniProfiler.Profiler.Start();
+            ServiceStack.MiniProfiler.Profiler.Start();
         }
 
         protected void Application_EndRequest(object src, EventArgs e)

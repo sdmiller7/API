@@ -83,3 +83,4 @@ D:\Projects\GitHub\API\ServiceStack\BitHiker.Api\bin\System.Web.WebPages.Deploym
 D:\Projects\GitHub\API\ServiceStack\BitHiker.Api\bin\System.Web.WebPages.Razor.xml
 D:\Projects\GitHub\API\ServiceStack\BitHiker.Api\obj\Debug\BitHiker.Api.dll
 D:\Projects\GitHub\API\ServiceStack\BitHiker.Api\obj\Debug\BitHiker.Api.pdb
+D:\Projects\GitHub\API\ServiceStack\BitHiker.Api\obj\Debug\BitHiker.Api.csprojResolveAssemblyReference.cache

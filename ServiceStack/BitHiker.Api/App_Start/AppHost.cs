@@ -58,6 +58,7 @@ namespace BitHiker.Api.App_Start
 
 			//Register all your dependencies
             container.Register(c => new ExchangeRepository(c.Resolve<IDbConnectionFactory>()));
+		    container.Register(c => new PrototypeExchangeRepository(c.Resolve<IDbConnectionFactory>()));
 
             ConfigureTables(container);
             
@@ -102,6 +103,9 @@ namespace BitHiker.Api.App_Start
         {
             var exchangeRepo = container.Resolve<ExchangeRepository>();
             exchangeRepo.CreateMissingTables();
+
+            var prototypeExchangeRepo = container.Resolve<PrototypeExchangeRepository>();
+            prototypeExchangeRepo.CreateMissingTables();
         }
 
 		public static void Start()

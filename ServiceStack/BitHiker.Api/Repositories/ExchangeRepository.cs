@@ -47,4 +47,46 @@ namespace BitHiker.Api.Repositories
             return exchange;
         }
     }
+
+    public class PrototypeExchangeRepository
+    {
+        private readonly IDbConnectionFactory _dbFactory;
+
+        public PrototypeExchangeRepository(IDbConnectionFactory dbFactory)
+        {
+            _dbFactory = dbFactory;
+        }
+
+        public void CreateMissingTables()
+        {
+            _dbFactory.Run(db => db.CreateTable<PrototypeExchange>(false));
+        }
+
+        public List<PrototypeExchange> GetAll()
+        {
+            return _dbFactory.Run(db => db.Select<PrototypeExchange>());
+        }
+
+        public List<PrototypeExchange> GetByUserIds(string[] userIds)
+        {
+            return _dbFactory.OpenDbConnection().Each<PrototypeExchange>().Where(p => userIds.Contains(p.UserId)).ToList();
+        }
+
+        public PrototypeExchange GetById(string id)
+        {
+            return _dbFactory.OpenDbConnection().GetById<PrototypeExchange>(id);
+        }
+
+        public PrototypeExchange Store(PrototypeExchange exchange)
+        {
+            if (exchange.Id == null)
+            {
+                exchange.Id = Guid.NewGuid().ToString("N");
+                _dbFactory.OpenDbConnection().Insert(exchange);
+            }
+            else _dbFactory.OpenDbConnection().Update(exchange);
+
+            return exchange;
+        }
+    }
 }
