@@ -69,22 +69,31 @@ namespace BitHiker.Api.Repositories
 
         public List<PrototypeExchange> GetByUserIds(string[] userIds)
         {
-            return _dbFactory.OpenDbConnection().Each<PrototypeExchange>().Where(p => userIds.Contains(p.UserId)).ToList();
+            using (var dbConnection = _dbFactory.OpenDbConnection())
+            {
+                return dbConnection.Each<PrototypeExchange>().Where(p => userIds.Contains(p.UserId)).ToList();
+            }
         }
 
         public PrototypeExchange GetById(string id)
         {
-            return _dbFactory.OpenDbConnection().GetById<PrototypeExchange>(id);
+            using (var dbConnection = _dbFactory.OpenDbConnection())
+            {
+                return dbConnection.GetById<PrototypeExchange>(id);
+            }
         }
 
         public PrototypeExchange Store(PrototypeExchange exchange)
         {
-            if (exchange.Id == null)
+            using (var dbConnection = _dbFactory.OpenDbConnection())
             {
-                exchange.Id = Guid.NewGuid().ToString("N");
-                _dbFactory.OpenDbConnection().Insert(exchange);
+                if (exchange.Id == null)
+                {
+                    exchange.Id = Guid.NewGuid().ToString("N");
+                    dbConnection.Insert(exchange);
+                }
+                else dbConnection.Update(exchange);
             }
-            else _dbFactory.OpenDbConnection().Update(exchange);
 
             return exchange;
         }

@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitHiker.Api", "BitHiker.Api\BitHiker.Api.csproj", "{687330C3-A856-46AE-9EFB-CF9F34AA1183}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitHiker.Api.Models", "BitHiker.Api.Models\BitHiker.Api.Models.csproj", "{23ED5A50-AEFB-4366-A400-8E0BE7E0EFF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitHiker.Api.Populator", "BitHiker.Api.Populator\BitHiker.Api.Populator.csproj", "{789E7C4E-89CE-48E3-A889-366A64A3E287}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{687330C3-A856-46AE-9EFB-CF9F34AA1183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{687330C3-A856-46AE-9EFB-CF9F34AA1183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{687330C3-A856-46AE-9EFB-CF9F34AA1183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23ED5A50-AEFB-4366-A400-8E0BE7E0EFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23ED5A50-AEFB-4366-A400-8E0BE7E0EFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23ED5A50-AEFB-4366-A400-8E0BE7E0EFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23ED5A50-AEFB-4366-A400-8E0BE7E0EFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789E7C4E-89CE-48E3-A889-366A64A3E287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789E7C4E-89CE-48E3-A889-366A64A3E287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789E7C4E-89CE-48E3-A889-366A64A3E287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789E7C4E-89CE-48E3-A889-366A64A3E287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
