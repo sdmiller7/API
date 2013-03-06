@@ -63,14 +63,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Models\Exchange.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\PrototypeExchange.cs" />
-    <Compile Include="Models\Token.cs" />
-    <Compile Include="Models\TokenAssignment.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserSecurity.cs" />
+    <Compile Include="Exchange.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="PrototypeExchange.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="TokenAssignment.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserSecurity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
